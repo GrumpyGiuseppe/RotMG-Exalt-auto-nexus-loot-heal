@@ -5,7 +5,7 @@
 ; auto heal if health < 65% and class = priest (only works with the layout of a t0 - t6 tome)
 ; auto drink mana potion if spell can't be used
 ; auto drink health potion if spell can't be used and no mana potions
-; auto loot health and mana potions
+; auto loot health and mana potions (if that doesn't work try a different cursor)
 ; auto zoom out map to max
 
 Loop {
