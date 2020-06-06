@@ -19,7 +19,8 @@ Loop {
 		PixelGetColor, priestcolor1, 2253, 749
 		PixelGetColor, priestcolor2, 2225, 789
 		PixelGetColor, priestcolor3, 2285, 758
-		PixelGetColor, mpcolor, 2219, 736
+		PixelGetColor, mpcolor, 2235, 667
+		PixelGetColor, spellcolor, 2219, 736
 		PixelGetColor, mppotioncolor, 2335, 1146
 		PixelGetColor, hppotioncolor, 2113, 1146
 		PixelGetColor, potioncolor1a, 2155, 1267
@@ -54,7 +55,7 @@ Loop {
 			Send {RButton}
 			sleep 100
 		}
-		else if (nexuscolor != 0xFFFFFF) and (mpcolor = 0x212121) and (mppotioncolor = 0x545454)
+		else if (nexuscolor != 0xFFFFFF) and (mpcolor = 0x545454) and (spellcolor = 0x212121) and (mppotioncolor = 0x545454)
 		{
 			Send V
 			sleep 100
