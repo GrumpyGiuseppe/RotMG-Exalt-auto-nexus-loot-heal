@@ -66,42 +66,42 @@ Loop {
 			sleep 100
 		}
 		
-		if (potioncolor1a = 0xFFFFFF) and (potioncolor1b = 0x0E0E0E)
+		if (nexuscolor != 0xFFFFFF) and (potioncolor1a = 0xFFFFFF) and (potioncolor1b = 0x0E0E0E)
 		{
 			MouseMove, 2149, 1270
 			Send {LButton}
 		}
-		else if (potioncolor2a = 0xFFFFFF) and (potioncolor2b = 0x0E0E0E)
+		else if (nexuscolor != 0xFFFFFF) and (potioncolor2a = 0xFFFFFF) and (potioncolor2b = 0x0E0E0E)
 		{
 			MouseMove, 2259, 1270
 			Send {LButton}
 		}
-		else if (potioncolor3a = 0xFFFFFF) and (potioncolor3b = 0x0E0E0E)
+		else if (nexuscolor != 0xFFFFFF) and (potioncolor3a = 0xFFFFFF) and (potioncolor3b = 0x0E0E0E)
 		{
 			MouseMove, 2369, 1270
 			Send {LButton}
 		}
-		else if (potioncolor4a = 0xFFFFFF) and (potioncolor4b = 0x0E0E0E)
+		else if (nexuscolor != 0xFFFFFF) and (potioncolor4a = 0xFFFFFF) and (potioncolor4b = 0x0E0E0E)
 		{
 			MouseMove, 2480, 1270
 			Send {LButton}
 		}
-		else if (potioncolor5a = 0xFFFFFF) and (potioncolor5b = 0x0E0E0E)
+		else if (nexuscolor != 0xFFFFFF) and (potioncolor5a = 0xFFFFFF) and (potioncolor5b = 0x0E0E0E)
 		{
 			MouseMove, 2149, 1380
 			Send {LButton}
 		}
-		else if (potioncolor6a = 0xFFFFFF) and (potioncolor6b = 0x0E0E0E)
+		else if (nexuscolor != 0xFFFFFF) and (potioncolor6a = 0xFFFFFF) and (potioncolor6b = 0x0E0E0E)
 		{
 			MouseMove, 2259, 1380
 			Send {LButton}
 		}
-		else if (potioncolor7a = 0xFFFFFF) and (potioncolor7b = 0x0E0E0E)
+		else if (nexuscolor != 0xFFFFFF) and (potioncolor7a = 0xFFFFFF) and (potioncolor7b = 0x0E0E0E)
 		{
 			MouseMove, 2369, 1380
 			Send {LButton}
 		}
-		else if (potioncolor8a = 0xFFFFFF) and (potioncolor8b = 0x0E0E0E)
+		else if (nexuscolor != 0xFFFFFF) and (potioncolor8a = 0xFFFFFF) and (potioncolor8b = 0x0E0E0E)
 		{
 			MouseMove, 2480, 1380
 			Send {LButton}
