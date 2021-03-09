@@ -1,44 +1,44 @@
-; only works if the desktop resolution = 2560x1440
+; only works if the desktop resolution = 2560x1440 and the ingame resolution = 1920x1080
 ; only works if the game is borderless fullscreen (set game to window mode and then press alt + enter)
 ; auto close chat if health < 65% (only works if a scroll bar is already there, which mostly is)
 ; auto nexus if health < 45%
-; auto heal if health < 65% and class = priest (only works with the layout of a t0 - t6 tome)
+; auto heal if health < 65% and class = priest
 ; auto drink mana potion if spell can't be used
 ; auto drink health potion if spell can't be used and no mana potions
-; auto loot health and mana potions (if that doesn't work try a different cursor)
+; auto loot health and mana potions (if that doesn't work try a different cursor or use YoloMouse)
 ; auto zoom out map to max
 
 Loop {
 	sleep 10
 	IfWinActive, RotMGExalt
 	{
-		PixelGetColor, chatcolor, 8, 1359
-		PixelGetColor, hpcolorheal, 2382, 611
+		PixelGetColor, chatcolor, 9, 1360
+		PixelGetColor, hpcolorheal, 2382, 613
 		PixelGetColor, nexuscolor, 2030, 44
-		PixelGetColor, hpcolor, 2290, 611
-		PixelGetColor, priestcolor1, 2253, 749
-		PixelGetColor, priestcolor2, 2225, 789
-		PixelGetColor, priestcolor3, 2285, 758
-		PixelGetColor, mpcolor, 2235, 667
+		PixelGetColor, hpcolor, 2290, 613
+		PixelGetColor, priestcolor1, 2265, 740
+		PixelGetColor, priestcolor2, 2294, 770
+		PixelGetColor, priestcolor3, 2234, 745
+		PixelGetColor, mpcolor, 2235, 668
 		PixelGetColor, spellcolor, 2219, 736
-		PixelGetColor, mppotioncolor, 2335, 1146
-		PixelGetColor, hppotioncolor, 2113, 1146
-		PixelGetColor, potioncolor1a, 2155, 1267
-		PixelGetColor, potioncolor1b, 2153, 1264
-		PixelGetColor, potioncolor2a, 2266, 1267
-		PixelGetColor, potioncolor2b, 2263, 1264
-		PixelGetColor, potioncolor3a, 2375, 1267
-		PixelGetColor, potioncolor3b, 2373, 1264
-		PixelGetColor, potioncolor4a, 2486, 1267
-		PixelGetColor, potioncolor4b, 2484, 1264
-		PixelGetColor, potioncolor5a, 2155, 1376
-		PixelGetColor, potioncolor5b, 2153, 1373
-		PixelGetColor, potioncolor6a, 2266, 1376
-		PixelGetColor, potioncolor6b, 2263, 1373
-		PixelGetColor, potioncolor7a, 2375, 1376
-		PixelGetColor, potioncolor7b, 2373, 1373
-		PixelGetColor, potioncolor8a, 2486, 1376
-		PixelGetColor, potioncolor8b, 2484, 1373
+		PixelGetColor, mppotioncolor, 2398, 1164
+		PixelGetColor, hppotioncolor, 2176, 1164
+		PixelGetColor, potioncolor1a, 2157, 1273
+		PixelGetColor, potioncolor1b, 2173, 1305
+		PixelGetColor, potioncolor2a, 2270, 1273
+		PixelGetColor, potioncolor2b, 2285, 1305
+		PixelGetColor, potioncolor3a, 2378, 1273
+		PixelGetColor, potioncolor3b, 2395, 1305
+		PixelGetColor, potioncolor4a, 2489, 1273
+		PixelGetColor, potioncolor4b, 2505, 1305
+		PixelGetColor, potioncolor5a, 2157, 1380
+		PixelGetColor, potioncolor5b, 2173, 1416
+		PixelGetColor, potioncolor6a, 2270, 1380
+		PixelGetColor, potioncolor6b, 2285, 1416
+		PixelGetColor, potioncolor7a, 2378, 1380
+		PixelGetColor, potioncolor7b, 2395, 1416
+		PixelGetColor, potioncolor8a, 2489, 1380
+		PixelGetColor, potioncolor8b, 2505, 1416
 		PixelGetColor, mapcolor, 2514, 73
 		
 		if (chatcolor = 0x666666) and (hpcolorheal = 0x545454)
@@ -50,60 +50,60 @@ Loop {
 		{
 			Send R
 		}
-		else if (nexuscolor != 0xFFFFFF) and (hpcolorheal = 0x545454) and (priestcolor1 = 0x111111) and (priestcolor2 = 0x111111) and (priestcolor3 = 0x111111)
+		else if (nexuscolor != 0xFFFFFF) and (hpcolorheal = 0x545454) and (priestcolor1 = 0x0B0B0B) and (priestcolor2 = 0x212121) and (priestcolor3 = 0x363636)
 		{
 			Send {RButton}
 			sleep 100
 		}
-		else if (nexuscolor != 0xFFFFFF) and (mpcolor = 0x545454) and (spellcolor = 0x212121) and (mppotioncolor = 0x545454)
+		else if (nexuscolor != 0xFFFFFF) and (mpcolor = 0x545454) and (spellcolor = 0x212121) and (mppotioncolor != 0x545454)
 		{
 			Send V
 			sleep 100
 		}
-		else if (nexuscolor != 0xFFFFFF) and (hpcolorheal = 0x545454) and (hppotioncolor = 0x545454)
+		else if (nexuscolor != 0xFFFFFF) and (hpcolorheal = 0x545454) and (hppotioncolor != 0x545454)
 		{
 			Send F
 			sleep 100
 		}
 		
-		if (nexuscolor != 0xFFFFFF) and (potioncolor1a = 0xFFFFFF) and (potioncolor1b = 0x0E0E0E)
+		if (potioncolor1a = 0xFFFFFF) and (potioncolor1b = 0xFFFFFF)
 		{
-			MouseMove, 2149, 1270
+			MouseMove, 2177, 1270
 			Send {LButton}
 		}
-		else if (nexuscolor != 0xFFFFFF) and (potioncolor2a = 0xFFFFFF) and (potioncolor2b = 0x0E0E0E)
+		else if (potioncolor2a = 0xFFFFFF) and (potioncolor2b = 0xFFFFFF)
 		{
-			MouseMove, 2259, 1270
+			MouseMove, 2288, 1270
 			Send {LButton}
 		}
-		else if (nexuscolor != 0xFFFFFF) and (potioncolor3a = 0xFFFFFF) and (potioncolor3b = 0x0E0E0E)
+		else if (potioncolor3a = 0xFFFFFF) and (potioncolor3b = 0xFFFFFF)
 		{
-			MouseMove, 2369, 1270
+			MouseMove, 2399, 1270
 			Send {LButton}
 		}
-		else if (nexuscolor != 0xFFFFFF) and (potioncolor4a = 0xFFFFFF) and (potioncolor4b = 0x0E0E0E)
+		else if (potioncolor4a = 0xFFFFFF) and (potioncolor4b = 0xFFFFFF)
 		{
-			MouseMove, 2480, 1270
+			MouseMove, 2510, 1270
 			Send {LButton}
 		}
-		else if (nexuscolor != 0xFFFFFF) and (potioncolor5a = 0xFFFFFF) and (potioncolor5b = 0x0E0E0E)
+		else if (potioncolor5a = 0xFFFFFF) and (potioncolor5b = 0xFFFFFF)
 		{
-			MouseMove, 2149, 1380
+			MouseMove, 2177, 1380
 			Send {LButton}
 		}
-		else if (nexuscolor != 0xFFFFFF) and (potioncolor6a = 0xFFFFFF) and (potioncolor6b = 0x0E0E0E)
+		else if (potioncolor6a = 0xFFFFFF) and (potioncolor6b = 0xFFFFFF)
 		{
-			MouseMove, 2259, 1380
+			MouseMove, 2288, 1380
 			Send {LButton}
 		}
-		else if (nexuscolor != 0xFFFFFF) and (potioncolor7a = 0xFFFFFF) and (potioncolor7b = 0x0E0E0E)
+		else if (potioncolor7a = 0xFFFFFF) and (potioncolor7b = 0xFFFFFF)
 		{
-			MouseMove, 2369, 1380
+			MouseMove, 2399, 1380
 			Send {LButton}
 		}
-		else if (nexuscolor != 0xFFFFFF) and (potioncolor8a = 0xFFFFFF) and (potioncolor8b = 0x0E0E0E)
+		else if (potioncolor8a = 0xFFFFFF) and (potioncolor8b = 0xFFFFFF)
 		{
-			MouseMove, 2480, 1380
+			MouseMove, 2510, 1380
 			Send {LButton}
 		}
 		
