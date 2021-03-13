@@ -1,11 +1,12 @@
 ; only works if the desktop resolution = 2560x1440 and the ingame resolution = 1920x1080
 ; only works if the game is borderless fullscreen (set game to window mode and then press alt + enter)
-; auto close chat if health < 65% (only works if a scroll bar is already there, which mostly is)
-; auto nexus if health < 45%
-; auto heal if health < 65% and class = priest
-; auto drink mana potion if spell can't be used
-; auto drink health potion if spell can't be used and no mana potions
-; auto loot health and mana potions (if that doesn't work try a different cursor or use YoloMouse)
+; only works if UI shadows are disabled in the ingame settings
+; auto close chat if health < 70% (only works if a scroll bar is already there, which mostly is)
+; auto nexus if health < 40%
+; auto heal if health < 70% and class = priest
+; auto drink health potion if spell can't be used or class != priest
+; auto drink mana potion if spell can't be used and no health potions
+; auto loot health and mana potions if health potions aren't maxed (if that doesn't work try a different cursor or use YoloMouse)
 ; auto zoom out map to max
 
 Loop {
@@ -13,9 +14,9 @@ Loop {
 	IfWinActive, RotMGExalt
 	{
 		PixelGetColor, chatcolor, 9, 1360
-		PixelGetColor, hpcolorheal, 2382, 613
+		PixelGetColor, hpcolorheal, 2410, 612
 		PixelGetColor, nexuscolor, 2030, 44
-		PixelGetColor, hpcolor, 2290, 613
+		PixelGetColor, hpcolor, 2274, 612
 		PixelGetColor, priestcolor1, 2265, 740
 		PixelGetColor, priestcolor2, 2294, 770
 		PixelGetColor, priestcolor3, 2234, 745
@@ -23,6 +24,7 @@ Loop {
 		PixelGetColor, spellcolor, 2219, 736
 		PixelGetColor, mppotioncolor, 2398, 1164
 		PixelGetColor, hppotioncolor, 2176, 1164
+		PixelGetColor, hppotioncolormax, 2221, 1166
 		PixelGetColor, potioncolor1a, 2157, 1273
 		PixelGetColor, potioncolor1b, 2173, 1305
 		PixelGetColor, potioncolor2a, 2270, 1273
@@ -55,53 +57,53 @@ Loop {
 			Send {RButton}
 			sleep 100
 		}
-		else if (nexuscolor != 0xFFFFFF) and (mpcolor = 0x545454) and (spellcolor = 0x212121) and (mppotioncolor != 0x545454)
-		{
-			Send V
-			sleep 100
-		}
 		else if (nexuscolor != 0xFFFFFF) and (hpcolorheal = 0x545454) and (hppotioncolor != 0x545454)
 		{
 			Send F
 			sleep 100
 		}
+		else if (nexuscolor != 0xFFFFFF) and (hpcolorheal = 0x545454) and (mpcolor = 0x545454) and (spellcolor = 0x212121) and (mppotioncolor != 0x545454)
+		{
+			Send V
+			sleep 100
+		}
 		
-		if (potioncolor1a = 0xFFFFFF) and (potioncolor1b = 0xFFFFFF)
+		if (hppotioncolormax != 0x373737) and (potioncolor1a = 0xFFFFFF) and (potioncolor1b = 0xFFFFFF)
 		{
 			MouseMove, 2177, 1270
 			Send {LButton}
 		}
-		else if (potioncolor2a = 0xFFFFFF) and (potioncolor2b = 0xFFFFFF)
+		else if (hppotioncolormax != 0x373737) and (potioncolor2a = 0xFFFFFF) and (potioncolor2b = 0xFFFFFF)
 		{
 			MouseMove, 2288, 1270
 			Send {LButton}
 		}
-		else if (potioncolor3a = 0xFFFFFF) and (potioncolor3b = 0xFFFFFF)
+		else if (hppotioncolormax != 0x373737) and (potioncolor3a = 0xFFFFFF) and (potioncolor3b = 0xFFFFFF)
 		{
 			MouseMove, 2399, 1270
 			Send {LButton}
 		}
-		else if (potioncolor4a = 0xFFFFFF) and (potioncolor4b = 0xFFFFFF)
+		else if (hppotioncolormax != 0x373737) and (potioncolor4a = 0xFFFFFF) and (potioncolor4b = 0xFFFFFF)
 		{
 			MouseMove, 2510, 1270
 			Send {LButton}
 		}
-		else if (potioncolor5a = 0xFFFFFF) and (potioncolor5b = 0xFFFFFF)
+		else if (hppotioncolormax != 0x373737) and (potioncolor5a = 0xFFFFFF) and (potioncolor5b = 0xFFFFFF)
 		{
 			MouseMove, 2177, 1380
 			Send {LButton}
 		}
-		else if (potioncolor6a = 0xFFFFFF) and (potioncolor6b = 0xFFFFFF)
+		else if (hppotioncolormax != 0x373737) and (potioncolor6a = 0xFFFFFF) and (potioncolor6b = 0xFFFFFF)
 		{
 			MouseMove, 2288, 1380
 			Send {LButton}
 		}
-		else if (potioncolor7a = 0xFFFFFF) and (potioncolor7b = 0xFFFFFF)
+		else if (hppotioncolormax != 0x373737) and (potioncolor7a = 0xFFFFFF) and (potioncolor7b = 0xFFFFFF)
 		{
 			MouseMove, 2399, 1380
 			Send {LButton}
 		}
-		else if (potioncolor8a = 0xFFFFFF) and (potioncolor8b = 0xFFFFFF)
+		else if (hppotioncolormax != 0x373737) and (potioncolor8a = 0xFFFFFF) and (potioncolor8b = 0xFFFFFF)
 		{
 			MouseMove, 2510, 1380
 			Send {LButton}
