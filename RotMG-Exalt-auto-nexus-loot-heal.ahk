@@ -43,7 +43,7 @@ Loop {
 		PixelGetColor, potioncolor8b, 2505, 1416
 		PixelGetColor, mapcolor, 2514, 73
 		
-		if (chatcolor = 0x666666) and (hpcolorheal = 0x545454)
+		if (nexuscolor != 0xFFFFFF) and (chatcolor = 0x666666) and (hpcolorheal = 0x545454)
 		{
 			Send {Esc}
 			sleep 100
