@@ -15,7 +15,7 @@ Loop {
 	{
 		PixelGetColor, chatcolor, 9, 1360
 		PixelGetColor, hpcolorheal, 2410, 612
-		PixelGetColor, nexuscolor, 2030, 44
+		PixelGetColor, nexuscolor, 2032, 44
 		PixelGetColor, hpcolor1, 2125, 625
 		PixelGetColor, hpcolor2, 2274, 612
 		PixelGetColor, priestcolor1, 2265, 740
@@ -44,7 +44,7 @@ Loop {
 		PixelGetColor, potioncolor8b, 2505, 1416
 		PixelGetColor, mapcolor, 2514, 73
 		
-		if (nexuscolor != 0xFFFFFF) and (chatcolor = 0x666666) and (hpcolorheal = 0x545454)
+		if (nexuscolor != 0xFFFFFF) and (hpcolor1 = 0xFFFFFF) and (chatcolor = 0x666666) and (hpcolorheal = 0x545454)
 		{
 			Send {Esc}
 			sleep 100
@@ -53,17 +53,17 @@ Loop {
 		{
 			Send R
 		}
-		else if (nexuscolor != 0xFFFFFF) and (hpcolorheal = 0x545454) and (priestcolor1 = 0x0B0B0B) and (priestcolor2 = 0x212121) and (priestcolor3 = 0x363636)
+		else if (nexuscolor != 0xFFFFFF) and (hpcolor1 = 0xFFFFFF) and (hpcolorheal = 0x545454) and (priestcolor1 = 0x0B0B0B) and (priestcolor2 = 0x212121) and (priestcolor3 = 0x363636)
 		{
 			Send {RButton}
 			sleep 100
 		}
-		else if (nexuscolor != 0xFFFFFF) and (hpcolorheal = 0x545454) and (hppotioncolor != 0x545454)
+		else if (nexuscolor != 0xFFFFFF) and (hpcolor1 = 0xFFFFFF) and (hpcolorheal = 0x545454) and (hppotioncolor != 0x545454)
 		{
 			Send F
 			sleep 100
 		}
-		else if (nexuscolor != 0xFFFFFF) and (hpcolorheal = 0x545454) and (mpcolor = 0x545454) and (spellcolor = 0x212121) and (mppotioncolor != 0x545454)
+		else if (nexuscolor != 0xFFFFFF) and (hpcolor1 = 0xFFFFFF) and (hpcolorheal = 0x545454) and (mpcolor = 0x545454) and (spellcolor = 0x212121) and (mppotioncolor != 0x545454)
 		{
 			Send V
 			sleep 100
@@ -110,7 +110,7 @@ Loop {
 			Send {LButton}
 		}
 		
-		if (nexuscolor != 0xFFFFFF) and (mapcolor = 0x7B7B7B)
+		if (mapcolor = 0x7B7B7B)
 		{
 			Send {WheelDown}
 		}
