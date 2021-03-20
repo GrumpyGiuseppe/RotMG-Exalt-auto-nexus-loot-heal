@@ -16,7 +16,8 @@ Loop {
 		PixelGetColor, chatcolor, 9, 1360
 		PixelGetColor, hpcolorheal, 2410, 612
 		PixelGetColor, nexuscolor, 2030, 44
-		PixelGetColor, hpcolor, 2274, 612
+		PixelGetColor, hpcolor1, 2125, 625
+		PixelGetColor, hpcolor2, 2274, 612
 		PixelGetColor, priestcolor1, 2265, 740
 		PixelGetColor, priestcolor2, 2294, 770
 		PixelGetColor, priestcolor3, 2234, 745
@@ -48,7 +49,7 @@ Loop {
 			Send {Esc}
 			sleep 100
 		}
-		else if (nexuscolor != 0xFFFFFF) and (hpcolor = 0x545454)
+		else if (nexuscolor != 0xFFFFFF) and (hpcolor1 = 0xFFFFFF) and (hpcolor2 = 0x545454)
 		{
 			Send R
 		}
@@ -109,7 +110,7 @@ Loop {
 			Send {LButton}
 		}
 		
-		if (mapcolor = 0x7B7B7B)
+		if (nexuscolor != 0xFFFFFF) and (mapcolor = 0x7B7B7B)
 		{
 			Send {WheelDown}
 		}
